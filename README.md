@@ -1,6 +1,4 @@
-# Build a JavaScript Calculator
-
-<img src="https://cdn-az.allevents.in/banners/0f3ff8a0e3325f4093216246eece7b17" />
+# :pencil2: Build a JavaScript Calculator :pencil2:
 
 This project is one of the final projects required to receive the FreeCodeCamp Front End Development Certificate. <br/>
 <ol>

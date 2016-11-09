@@ -46,10 +46,10 @@ table {
 #calculator {
 	background:#fff;
 	border-radius: 10px;
-	height:340px;
+	height: 380px;
 	width:340px;
 	position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
     margin-top: -200px;
     margin-left: -200px;
@@ -61,7 +61,7 @@ table {
 
 #screen {
 	width:100%;
-	height: 50px;
+	height: 12%;
 	border-radius: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.26);
 	text-align:right;
@@ -69,23 +69,45 @@ table {
     font-size: 50px;
 }
 
+#buttonsDiv {
+	height: 80%;
+	padding-top: 10px;
+}
+
 .calculatorRow {
 	display: block;
     height: 20%;
     position: relative;
     direction: ltr;
+    margin-bottom: 5px;
 }
 
-.calculatorButtonOperation .calculatorButtonNumber {
-	width:80px;
-	height:50px;
+.calculatorButtonOperation, .calculatorButtonNumber {
 	border: 1px solid rgba(0, 0, 0, 0.26);
 	border-radius: 10px;
 	display: inline-block;
-    height: 100%;
-    position: absolute;
+    height: 90%;
     vertical-align: bottom;
-    /* width: 25%; */
+    width: 21%;
+}
+
+.col1 {
+	left: 0%;
+	margin-right: 4px;
+}
+
+.col2  {
+	left: 25%;
+	margin-right: 4px;
+}
+
+.col3 {
+	left: 50%;
+	margin-right: 4px;
+}
+
+.col4 {
+	left: 75%;
 }
 
 

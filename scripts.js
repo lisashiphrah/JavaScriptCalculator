@@ -5,7 +5,13 @@ $(document).ready(function(){
 	var clearScreen = false;
 	var operation = '';
 
-	// OPERATION EVENTS
+
+	/**************************************************************
+
+	*	FUNCTIONS AND EVENTS RELATED TO OPERATION BUTTONS
+	
+	**************************************************************/
+
 	$('#powOperation').click(function(){
 
 	});
@@ -37,14 +43,13 @@ $(document).ready(function(){
 		calculateResult();
 	});
 
-	// $('#cleanOperation').click(function(){
-	// 	$('#screen').val('');
-	// });
+	
 
-	// $('#btnDot').click(function(){
-	// 	var currentVal = $('#screen').val();
-	// 	$('#screen').val(currentVal + '.')
-	// });
+	/**************************************************************
+
+	*	HELPERS AND OTHER FUNCTIONS
+	
+	**************************************************************/
 
 	//Calculates the resut based in the numbers on the screen
 	function calculateResult() {
@@ -63,13 +68,30 @@ $(document).ready(function(){
 		clearScreen = false;
 	}
 
-	//NUMBER EVENTS
+
+
+
+	/**************************************************************
+
+	*	FUNCTIONS AND EVENTS RELATED TO NUMBER BUTTONS
+
+	**************************************************************/
+
 	$('.calculatorButtonNumber').click(function(){
 		var buttonSelected = $(this).find('span')[0].innerText;
 		buttonSelected = parseInt(buttonSelected);
 
 		if(isNaN(buttonSelected)) {
-
+			if($(this).attr('id') === 'btnDot'){
+				var currentVal = $('#screen').val();
+				$('#screen').val(currentVal + '.')
+			}
+			else if($(this).attr('id') === 'cleanOperation'){
+				$('#screen').val('0')
+				firstNumber = 0;
+				secondNumber = 0;
+				clearScreen = true;
+			}
 		}
 		else {
 			if(clearScreen) {
@@ -79,10 +101,4 @@ $(document).ready(function(){
 			$('#screen').val(currentVal + buttonSelected);
 		}
 	});
-
-	
-	// $('#btnOne').click(function(){
-	// 	var currentVal = $('#screen').val();
-	// 	$('#screen').val(currentVal + '1')
-	// });
 });

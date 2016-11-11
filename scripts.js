@@ -12,38 +12,39 @@ $(document).ready(function(){
 	
 	**************************************************************/
 
-	$('#powOperation').click(function(){
+	$('.calculatorButtonOperation').click(function(){
+		var operationSelected = $(this).attr('id');
+		switch(operationSelected){
+			case 'powOperation':
+				operation = 'pow';
+			break;
+			case 'percentageOperation':
+				operation = 'percentage';
+			break;
+			case 'divOperation':
+				operation = 'div';
+			break;
+			case 'subOperation':
+				operation = 'sub';
+			break;
+			case 'plusOperation':
+				operation = 'plus';
+			break;
+			case 'multiOperation':
+				operation = 'multi';
+			break;
+			case 'equalOperation':
+				secondNumber = parseFloat($('#screen').val());
+				calculateResult();
+			break;
+		}
 
+		if(operationSelected !== 'equalOperation') {
+			firstNumber = parseFloat($('#screen').val());
+			clearScreen = true;
+		}
 	});
 
-	$('#percentageOperation').click(function(){
-
-	});
-
-	$('#divOperation').click(function(){
-
-	});
-
-	$('#subOperation').click(function(){
-
-	});
-
-	$('#plusOperation').click(function(){
-		operation = 'plus';
-		firstNumber = parseFloat($('#screen').val());
-		clearScreen = true;
-	});
-
-	$('#multiOperation').click(function(){
-
-	});
-
-	$('#equalOp').click(function(){
-		secondNumber = parseFloat($('#screen').val());
-		calculateResult();
-	});
-
-	
 
 	/**************************************************************
 

@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	var firstNumber = 0;
 	var secondNumber = 0;
+	var clearScreen = false;
 	var operation = '';
 
 	// OPERATION EVENTS
@@ -24,6 +25,7 @@ $(document).ready(function(){
 	$('#plusOperation').click(function(){
 		operation = 'plus';
 		firstNumber = parseFloat($('#screen').val());
+		clearScreen = true;
 	});
 
 	$('#multiOperation').click(function(){
@@ -32,20 +34,20 @@ $(document).ready(function(){
 
 	$('#equalOp').click(function(){
 		secondNumber = parseFloat($('#screen').val());
-		calculatesResult();
+		calculateResult();
 	});
 
-	$('#cleanOperation').click(function(){
-		$('#screen').val('');
-	});
+	// $('#cleanOperation').click(function(){
+	// 	$('#screen').val('');
+	// });
 
-	$('#btnDot').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '.')
-	});
+	// $('#btnDot').click(function(){
+	// 	var currentVal = $('#screen').val();
+	// 	$('#screen').val(currentVal + '.')
+	// });
 
 	//Calculates the resut based in the numbers on the screen
-	function calculatesResult() {
+	function calculateResult() {
 		var result = 0;
 		switch(operation){
 			case 'plus':
@@ -55,54 +57,32 @@ $(document).ready(function(){
 		}
 	}
 
+	//Clears the calculator display
+	function cleanDisplay() {
+		$('#screen').val('');
+		clearScreen = false;
+	}
+
 	//NUMBER EVENTS
-	$('#btnOne').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '1')
+	$('.calculatorButtonNumber').click(function(){
+		var buttonSelected = $(this).find('span')[0].innerText;
+		buttonSelected = parseInt(buttonSelected);
+
+		if(isNaN(buttonSelected)) {
+
+		}
+		else {
+			if(clearScreen) {
+				cleanDisplay();
+			}
+			var currentVal = $('#screen').val();
+			$('#screen').val(currentVal + buttonSelected);
+		}
 	});
 
-	$('#btnTwo').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '2')
-	});
-
-	$('#btnThree').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '3')
-	});
-
-	$('#btnFour').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '4')
-	});
-
-	$('#btnFive').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '5')
-	});
-
-	$('#btnSix').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '6')
-	});
-
-	$('#btnSeven').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '7')
-	});
-
-	$('#btnEight').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '8')
-	});
-
-	$('#btnNine').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '9')
-	});
-
-	$('#btnZero').click(function(){
-		var currentVal = $('#screen').val();
-		$('#screen').val(currentVal + '0')
-	});
+	
+	// $('#btnOne').click(function(){
+	// 	var currentVal = $('#screen').val();
+	// 	$('#screen').val(currentVal + '1')
+	// });
 });

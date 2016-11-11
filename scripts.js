@@ -58,9 +58,25 @@ $(document).ready(function(){
 		switch(operation){
 			case 'plus':
 				result = firstNumber + secondNumber;
-				$('#screen').val(result);			
+			break;
+			case 'multi':
+				result = firstNumber * secondNumber;
+			break;
+			case 'div':
+				result = (firstNumber / secondNumber).toFixed(2);
+			break;
+			case 'sub':
+				result = firstNumber - secondNumber;
+			break;
+			case 'pow':
+				result = Math.pow(firstNumber,secondNumber);
+			break;
+			case 'percentage':
+				result = ((firstNumber / secondNumber) * 100).toFixed(2);
 			break;
 		}
+
+		$('#screen').val(result);
 	}
 
 	//Clears the calculator display

@@ -148,7 +148,7 @@ span sup {
 	left: 75%;
 }
 
-#equalOp {
+#equalOperation {
 	height: 200%;
     margin-top: 2px;
     position: absolute;
@@ -159,7 +159,7 @@ span sup {
     z-index: 99999999;
 }
 
-#equalOp:hover {
+#equalOperation:hover {
 	background: rgb(33, 131, 202);
 }
 

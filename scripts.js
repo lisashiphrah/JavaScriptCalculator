@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	$('#screen').val('0');
+
 	var firstNumber = 0;
 	var secondNumber = 0;
 	var clearScreen = false;

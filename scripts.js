@@ -114,11 +114,16 @@ $(document).ready(function(){
 			}
 		}
 		else {
-			if(clearScreen) {
+			if(clearScreen) {	
 				cleanDisplay();
 			}
 			var currentVal = $('#screen').val();
-			$('#screen').val(currentVal + buttonSelected);
+			if(currentVal == '0') {
+				$('#screen').val(buttonSelected);
+			}
+			else {
+				$('#screen').val(currentVal + buttonSelected);
+			}
 		}
 	});
 });

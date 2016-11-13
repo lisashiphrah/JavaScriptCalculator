@@ -77,6 +77,7 @@ $(document).ready(function(){
 		}
 
 		$('#screen').val(result);
+		clearScreen = true;
 	}
 
 	//Clears the calculator display

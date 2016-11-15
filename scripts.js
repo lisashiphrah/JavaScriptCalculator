@@ -6,7 +6,6 @@ $(document).ready(function(){
 	var secondNumber = 0;
 	var clearScreen = false;
 	var operation = '';
-	var end = false;
 
 
 	/**************************************************************
@@ -39,6 +38,7 @@ $(document).ready(function(){
 			case 'equalOperation':
 				secondNumber = parseFloat($('#screen').val());
 				calculateResult();
+				operation = '';
 			break;
 		}
 
@@ -78,9 +78,10 @@ $(document).ready(function(){
 				result = ((firstNumber / secondNumber) * 100).toFixed(2);
 			break;
 		}
-
-		$('#screen').val(result);
-		clearScreen = true;
+		if(operation !== '') {
+			$('#screen').val(result);
+			clearScreen = true;
+		}
 	}
 
 	//Clears the calculator display

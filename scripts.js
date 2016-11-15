@@ -6,6 +6,7 @@ $(document).ready(function(){
 	var secondNumber = 0;
 	var clearScreen = false;
 	var operation = '';
+	var end = false;
 
 
 	/**************************************************************

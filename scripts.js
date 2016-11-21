@@ -79,7 +79,7 @@ $(document).ready(function(){
 			break;
 		}
 		if(operation !== '') {
-			$('#screen').val(result);
+			$('#screen').val(round(result));
 			clearScreen = true;
 		}
 	}
@@ -89,6 +89,25 @@ $(document).ready(function(){
 		$('#screen').val('');
 		clearScreen = false;
 	}
+
+	function round(val) {
+	    val = val.toString().split('');
+	    if (val.indexOf('.') !== -1) {
+	      var valTest = val.slice(val.indexOf('.') + 1, val.length);
+	      val = val.slice(0, val.indexOf('.') + 1);
+	      var i = 0;
+	      while (valTest[i] < 1) {
+	        i++
+	      }
+	      valTest = valTest.join('').slice(0, i + 2);
+	      if (valTest[valTest.length-1] === '0') {
+	        valTest = valTest.slice(0, -1);
+	      }
+	      return val.join('') + valTest;
+	    } else {
+	      return val.join('');
+	    }
+  }
 
 
 

@@ -110,8 +110,6 @@ $(document).ready(function(){
   }
 
 
-
-
 	/**************************************************************
 
 	*	FUNCTIONS AND EVENTS RELATED TO NUMBER BUTTONS

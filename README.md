@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/lisashiphrah/JavaScriptCalculator/maintainability"><img src="https://api.codeclimate.com/v1/badges/9220cba24d8b96cdbea2/maintainability" /></a>
+
 ![FreeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
 # :pencil2: Build a JavaScript Calculator :pencil2:
